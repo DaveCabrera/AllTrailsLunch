@@ -16,6 +16,12 @@
 		9EA54C542746E0B400383EDE /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA54C532746E0B400383EDE /* NetworkClient.swift */; };
 		9EA54C572746E32B00383EDE /* APIKeys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9EA54C562746E32B00383EDE /* APIKeys.plist */; };
 		9EA54C602746E94000383EDE /* GetNearbyPlacesNetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA54C5F2746E94000383EDE /* GetNearbyPlacesNetworkRequest.swift */; };
+		9EA54C622746F1BF00383EDE /* NetworkRequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA54C612746F1BF00383EDE /* NetworkRequestProtocol.swift */; };
+		9EA54C652746F1E100383EDE /* URLRequest+Method.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA54C642746F1E100383EDE /* URLRequest+Method.swift */; };
+		9EA54C682746F79300383EDE /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EA54C672746F79300383EDE /* MapKit.framework */; };
+		9EA54C6B2746FC8A00383EDE /* NetworkClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA54C6A2746FC8A00383EDE /* NetworkClientProtocol.swift */; };
+		9EA54C6F2746FE5500383EDE /* PlaceResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA54C6E2746FE5500383EDE /* PlaceResponse.swift */; };
+		9EA54C7427470CBB00383EDE /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA54C7327470CBB00383EDE /* Location.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +36,12 @@
 		9EA54C532746E0B400383EDE /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
 		9EA54C562746E32B00383EDE /* APIKeys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = APIKeys.plist; path = AllTrailsLunch/Resources/APIKeys.plist; sourceTree = SOURCE_ROOT; };
 		9EA54C5F2746E94000383EDE /* GetNearbyPlacesNetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetNearbyPlacesNetworkRequest.swift; sourceTree = "<group>"; };
+		9EA54C612746F1BF00383EDE /* NetworkRequestProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequestProtocol.swift; sourceTree = "<group>"; };
+		9EA54C642746F1E100383EDE /* URLRequest+Method.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLRequest+Method.swift"; sourceTree = "<group>"; };
+		9EA54C672746F79300383EDE /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		9EA54C6A2746FC8A00383EDE /* NetworkClientProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClientProtocol.swift; sourceTree = "<group>"; };
+		9EA54C6E2746FE5500383EDE /* PlaceResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceResponse.swift; sourceTree = "<group>"; };
+		9EA54C7327470CBB00383EDE /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9EA54C682746F79300383EDE /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -48,6 +61,7 @@
 			children = (
 				9EA54C3D2746E02700383EDE /* AllTrailsLunch */,
 				9EA54C3C2746E02700383EDE /* Products */,
+				9EA54C662746F79300383EDE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -78,9 +92,11 @@
 		9EA54C522746E09F00383EDE /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				9EA54C6D2746FE3000383EDE /* Models */,
+				9EA54C6C2746FCA600383EDE /* Requests */,
+				9EA54C632746F1D300383EDE /* Extensions */,
 				9EA54C5A2746E5BC00383EDE /* Protocols */,
 				9EA54C532746E0B400383EDE /* NetworkClient.swift */,
-				9EA54C5F2746E94000383EDE /* GetNearbyPlacesNetworkRequest.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -96,8 +112,43 @@
 		9EA54C5A2746E5BC00383EDE /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				9EA54C612746F1BF00383EDE /* NetworkRequestProtocol.swift */,
+				9EA54C6A2746FC8A00383EDE /* NetworkClientProtocol.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		9EA54C632746F1D300383EDE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9EA54C642746F1E100383EDE /* URLRequest+Method.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		9EA54C662746F79300383EDE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9EA54C672746F79300383EDE /* MapKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9EA54C6C2746FCA600383EDE /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				9EA54C5F2746E94000383EDE /* GetNearbyPlacesNetworkRequest.swift */,
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
+		9EA54C6D2746FE3000383EDE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9EA54C6E2746FE5500383EDE /* PlaceResponse.swift */,
+				9EA54C7327470CBB00383EDE /* Location.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -173,9 +224,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				9EA54C432746E02700383EDE /* ViewController.swift in Sources */,
+				9EA54C6B2746FC8A00383EDE /* NetworkClientProtocol.swift in Sources */,
+				9EA54C7427470CBB00383EDE /* Location.swift in Sources */,
 				9EA54C3F2746E02700383EDE /* AppDelegate.swift in Sources */,
+				9EA54C622746F1BF00383EDE /* NetworkRequestProtocol.swift in Sources */,
 				9EA54C412746E02700383EDE /* SceneDelegate.swift in Sources */,
 				9EA54C602746E94000383EDE /* GetNearbyPlacesNetworkRequest.swift in Sources */,
+				9EA54C6F2746FE5500383EDE /* PlaceResponse.swift in Sources */,
+				9EA54C652746F1E100383EDE /* URLRequest+Method.swift in Sources */,
 				9EA54C542746E0B400383EDE /* NetworkClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
