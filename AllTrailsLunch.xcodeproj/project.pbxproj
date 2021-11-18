@@ -13,6 +13,9 @@
 		9EA54C462746E02700383EDE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9EA54C442746E02700383EDE /* Main.storyboard */; };
 		9EA54C482746E02900383EDE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9EA54C472746E02900383EDE /* Assets.xcassets */; };
 		9EA54C4B2746E02900383EDE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9EA54C492746E02900383EDE /* LaunchScreen.storyboard */; };
+		9EA54C542746E0B400383EDE /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA54C532746E0B400383EDE /* NetworkClient.swift */; };
+		9EA54C572746E32B00383EDE /* APIKeys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9EA54C562746E32B00383EDE /* APIKeys.plist */; };
+		9EA54C602746E94000383EDE /* GetNearbyPlacesNetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA54C5F2746E94000383EDE /* GetNearbyPlacesNetworkRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		9EA54C472746E02900383EDE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9EA54C4A2746E02900383EDE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9EA54C4C2746E02900383EDE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9EA54C532746E0B400383EDE /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
+		9EA54C562746E32B00383EDE /* APIKeys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = APIKeys.plist; path = AllTrailsLunch/Resources/APIKeys.plist; sourceTree = SOURCE_ROOT; };
+		9EA54C5F2746E94000383EDE /* GetNearbyPlacesNetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetNearbyPlacesNetworkRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +62,8 @@
 		9EA54C3D2746E02700383EDE /* AllTrailsLunch */ = {
 			isa = PBXGroup;
 			children = (
+				9EA54C552746E28D00383EDE /* Resources */,
+				9EA54C522746E09F00383EDE /* Networking */,
 				9EA54C3E2746E02700383EDE /* AppDelegate.swift */,
 				9EA54C402746E02700383EDE /* SceneDelegate.swift */,
 				9EA54C422746E02700383EDE /* ViewController.swift */,
@@ -65,6 +73,31 @@
 				9EA54C4C2746E02900383EDE /* Info.plist */,
 			);
 			path = AllTrailsLunch;
+			sourceTree = "<group>";
+		};
+		9EA54C522746E09F00383EDE /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				9EA54C5A2746E5BC00383EDE /* Protocols */,
+				9EA54C532746E0B400383EDE /* NetworkClient.swift */,
+				9EA54C5F2746E94000383EDE /* GetNearbyPlacesNetworkRequest.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		9EA54C552746E28D00383EDE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9EA54C562746E32B00383EDE /* APIKeys.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		9EA54C5A2746E5BC00383EDE /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,6 +159,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9EA54C4B2746E02900383EDE /* LaunchScreen.storyboard in Resources */,
+				9EA54C572746E32B00383EDE /* APIKeys.plist in Resources */,
 				9EA54C482746E02900383EDE /* Assets.xcassets in Resources */,
 				9EA54C462746E02700383EDE /* Main.storyboard in Resources */,
 			);
@@ -141,6 +175,8 @@
 				9EA54C432746E02700383EDE /* ViewController.swift in Sources */,
 				9EA54C3F2746E02700383EDE /* AppDelegate.swift in Sources */,
 				9EA54C412746E02700383EDE /* SceneDelegate.swift in Sources */,
+				9EA54C602746E94000383EDE /* GetNearbyPlacesNetworkRequest.swift in Sources */,
+				9EA54C542746E0B400383EDE /* NetworkClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
