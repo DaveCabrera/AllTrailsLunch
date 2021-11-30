@@ -17,8 +17,11 @@ public final class NetworkClient: NetworkClientRepresentable {
     
 	func execute<Response: Codable>(type: Response.Type, networkRequest: JSONNetworkRequest) -> AnyPublisher<Response, Error> {
 		session.dataTaskPublisher(for: networkRequest.asURLRequest())
+			.print()
 			.map(\.data)
+			.print()
 			.decode(type: Response.self, decoder: networkRequest.decoder)
+			.print()
             .eraseToAnyPublisher()
     }
 }

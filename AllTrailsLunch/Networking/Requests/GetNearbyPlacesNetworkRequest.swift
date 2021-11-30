@@ -8,13 +8,9 @@
 import Foundation
 
 struct GetNearbyPlacesNetworkRequest: JSONNetworkRequest {
-	struct Location: CustomStringConvertible {
+	struct Location {
 		let latitude: Double
 		let longitdue: Double
-		
-		var description: String {
-			return latitude.description + longitdue.description
-		}
 	}
 	
 	enum PlaceType: String {
@@ -22,16 +18,21 @@ struct GetNearbyPlacesNetworkRequest: JSONNetworkRequest {
 	}
 	
     var path: String {
-        return "maps/api/place/nearbysearch/json"
+        return "/maps/api/place/nearbysearch/json"
     }
 	
 	var method: URLRequest.Method {
 		return .get
 	}
 	
-	var queryItems: [URLQueryItem] {
+	var queryItems: [URLQueryItem]? {
+		return nil
+	}
+	
+	var percentEncodedQueryItems: [URLQueryItem]? {
 		return [URLQueryItem(name: "type", value: placeType.rawValue),
-				URLQueryItem(name: "location", value: location.description),
+				URLQueryItem(name: "location", value: "\(location.latitude)%2C\(location.longitdue)"),
+				URLQueryItem(name: "radius", value: "1500"), // Docs say only location is req but both location + radius are
 				URLQueryItem(name: "key", value: apiKey)]
 	}
 	

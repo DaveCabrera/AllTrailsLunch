@@ -7,6 +7,13 @@
 
 import Foundation
 
+struct NearbySearchResponse: Codable {
+	let htmlAttributions: [String]
+	let nextPageToken: String?
+	let results: [PlaceResponse]
+	let status: String
+}
+
 struct PlaceResponse: Codable {
 	struct Geometry: Codable {
 		struct Location: Codable {
