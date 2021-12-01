@@ -18,10 +18,11 @@
 		9EA54C602746E94000383EDE /* GetNearbyPlacesNetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA54C5F2746E94000383EDE /* GetNearbyPlacesNetworkRequest.swift */; };
 		9EA54C622746F1BF00383EDE /* NetworkRequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA54C612746F1BF00383EDE /* NetworkRequestProtocol.swift */; };
 		9EA54C652746F1E100383EDE /* URLRequest+Method.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA54C642746F1E100383EDE /* URLRequest+Method.swift */; };
-		9EA54C682746F79300383EDE /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EA54C672746F79300383EDE /* MapKit.framework */; };
 		9EA54C6B2746FC8A00383EDE /* NetworkClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA54C6A2746FC8A00383EDE /* NetworkClientProtocol.swift */; };
-		9EA54C6F2746FE5500383EDE /* PlaceResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA54C6E2746FE5500383EDE /* PlaceResponse.swift */; };
-		9EA54C7427470CBB00383EDE /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA54C7327470CBB00383EDE /* Location.swift */; };
+		9EA54C6F2746FE5500383EDE /* NearbySearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA54C6E2746FE5500383EDE /* NearbySearchResponse.swift */; };
+		9EFDB4E92756EC8300A1269A /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EFDB4E82756EC8300A1269A /* LocationManager.swift */; };
+		9EFDB4F02757EF4100A1269A /* ViewController+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EFDB4EF2757EF4100A1269A /* ViewController+ViewModel.swift */; };
+		9EFDB4F32757F2EF00A1269A /* CLLocationCoordinate2D+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EFDB4F22757F2EF00A1269A /* CLLocationCoordinate2D+Equatable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,8 +41,10 @@
 		9EA54C642746F1E100383EDE /* URLRequest+Method.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLRequest+Method.swift"; sourceTree = "<group>"; };
 		9EA54C672746F79300383EDE /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		9EA54C6A2746FC8A00383EDE /* NetworkClientProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClientProtocol.swift; sourceTree = "<group>"; };
-		9EA54C6E2746FE5500383EDE /* PlaceResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceResponse.swift; sourceTree = "<group>"; };
-		9EA54C7327470CBB00383EDE /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		9EA54C6E2746FE5500383EDE /* NearbySearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbySearchResponse.swift; sourceTree = "<group>"; };
+		9EFDB4E82756EC8300A1269A /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		9EFDB4EF2757EF4100A1269A /* ViewController+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+ViewModel.swift"; sourceTree = "<group>"; };
+		9EFDB4F22757F2EF00A1269A /* CLLocationCoordinate2D+Equatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocationCoordinate2D+Equatable.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,7 +52,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9EA54C682746F79300383EDE /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,11 +78,13 @@
 		9EA54C3D2746E02700383EDE /* AllTrailsLunch */ = {
 			isa = PBXGroup;
 			children = (
+				9EFDB4F12757F2C500A1269A /* Extensions */,
+				9EFDB4EA2757DE8C00A1269A /* ViewControllers */,
+				9EFDB4E72756EC1400A1269A /* Mangers */,
 				9EA54C552746E28D00383EDE /* Resources */,
 				9EA54C522746E09F00383EDE /* Networking */,
 				9EA54C3E2746E02700383EDE /* AppDelegate.swift */,
 				9EA54C402746E02700383EDE /* SceneDelegate.swift */,
-				9EA54C422746E02700383EDE /* ViewController.swift */,
 				9EA54C442746E02700383EDE /* Main.storyboard */,
 				9EA54C472746E02900383EDE /* Assets.xcassets */,
 				9EA54C492746E02900383EDE /* LaunchScreen.storyboard */,
@@ -145,10 +149,42 @@
 		9EA54C6D2746FE3000383EDE /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				9EA54C6E2746FE5500383EDE /* PlaceResponse.swift */,
-				9EA54C7327470CBB00383EDE /* Location.swift */,
+				9EA54C6E2746FE5500383EDE /* NearbySearchResponse.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		9EFDB4E72756EC1400A1269A /* Mangers */ = {
+			isa = PBXGroup;
+			children = (
+				9EFDB4E82756EC8300A1269A /* LocationManager.swift */,
+			);
+			path = Mangers;
+			sourceTree = "<group>";
+		};
+		9EFDB4EA2757DE8C00A1269A /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				9EFDB4EE2757EEFF00A1269A /* ViewModel */,
+				9EA54C422746E02700383EDE /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		9EFDB4EE2757EEFF00A1269A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				9EFDB4EF2757EF4100A1269A /* ViewController+ViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		9EFDB4F12757F2C500A1269A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9EFDB4F22757F2EF00A1269A /* CLLocationCoordinate2D+Equatable.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -225,12 +261,14 @@
 			files = (
 				9EA54C432746E02700383EDE /* ViewController.swift in Sources */,
 				9EA54C6B2746FC8A00383EDE /* NetworkClientProtocol.swift in Sources */,
-				9EA54C7427470CBB00383EDE /* Location.swift in Sources */,
+				9EFDB4F32757F2EF00A1269A /* CLLocationCoordinate2D+Equatable.swift in Sources */,
+				9EFDB4E92756EC8300A1269A /* LocationManager.swift in Sources */,
 				9EA54C3F2746E02700383EDE /* AppDelegate.swift in Sources */,
 				9EA54C622746F1BF00383EDE /* NetworkRequestProtocol.swift in Sources */,
 				9EA54C412746E02700383EDE /* SceneDelegate.swift in Sources */,
+				9EFDB4F02757EF4100A1269A /* ViewController+ViewModel.swift in Sources */,
 				9EA54C602746E94000383EDE /* GetNearbyPlacesNetworkRequest.swift in Sources */,
-				9EA54C6F2746FE5500383EDE /* PlaceResponse.swift in Sources */,
+				9EA54C6F2746FE5500383EDE /* NearbySearchResponse.swift in Sources */,
 				9EA54C652746F1E100383EDE /* URLRequest+Method.swift in Sources */,
 				9EA54C542746E0B400383EDE /* NetworkClient.swift in Sources */,
 			);

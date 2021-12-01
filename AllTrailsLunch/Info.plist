@@ -4,6 +4,8 @@
 <dict>
 	<key>NSLocationUsageDescription</key>
 	<string>This app needs your location to show you nearby restaurants.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>This app needs your location to show you nearby restaurants.</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>This app needs your location to show you nearby restaurants.</string>
 	<key>UIApplicationSceneManifest</key>
