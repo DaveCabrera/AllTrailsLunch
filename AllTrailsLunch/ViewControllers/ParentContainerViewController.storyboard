@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Parent Container View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController id="Y6W-OH-hqX" customClass="ParentContainerViewController" customModule="AllTrailsLunch" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0L3-2k-HJW">
+                                <rect key="frame" x="0.0" y="144" width="414" height="752"/>
+                                <connections>
+                                    <segue destination="zC8-lN-Won" kind="embed" id="reS-Bn-4DO"/>
+                                </connections>
+                            </containerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" role="primary" translatesAutoresizingMaskIntoConstraints="NO" id="hwg-cn-nRW">
+                                <rect key="frame" x="157" y="800" width="100" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="Wwu-3l-Bhn"/>
+                                    <constraint firstAttribute="height" constant="42" id="bdt-xN-TAR"/>
+                                </constraints>
+                                <color key="tintColor" name="primaryAction"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" image="mapPin" title="Map">
+                                    <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="16"/>
+                                    <color key="baseBackgroundColor" name="primaryAction"/>
+                                </buttonConfiguration>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2vi-h4-gDd">
+                                <rect key="frame" x="0.0" y="44" width="414" height="100"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="4ed-bp-dy4">
+                                        <rect key="frame" x="98" y="35.5" width="218" height="29"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="allTrailsIconMountain" translatesAutoresizingMaskIntoConstraints="NO" id="Fr4-YV-pcv">
+                                                <rect key="frame" x="0.0" y="7" width="31" height="22"/>
+                                                <color key="tintColor" red="0.90196078430000004" green="0.90196078430000004" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="31" id="cGY-k9-2Mz"/>
+                                                    <constraint firstAttribute="height" constant="22" id="hwg-4g-eCX"/>
+                                                </constraints>
+                                            </imageView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="xbF-47-IKp">
+                                                <rect key="frame" x="31" y="0.0" width="187" height="29"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AllTrails" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rvY-Tp-mfE">
+                                                        <rect key="frame" x="0.0" y="0.0" width="89.5" height="29"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                                        <color key="textColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="at Lunch" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lIu-qy-npm">
+                                                        <rect key="frame" x="94.5" y="0.0" width="92.5" height="29"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
+                                                        <color key="textColor" red="0.84705882352941175" green="0.84705882352941175" blue="0.84705882352941175" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="4ed-bp-dy4" firstAttribute="centerY" secondItem="2vi-h4-gDd" secondAttribute="centerY" id="EV4-Ff-rhc"/>
+                                    <constraint firstItem="4ed-bp-dy4" firstAttribute="centerX" secondItem="2vi-h4-gDd" secondAttribute="centerX" id="bmA-sO-qcb"/>
+                                    <constraint firstAttribute="height" constant="100" id="p8h-rf-iV1"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="0L3-2k-HJW" secondAttribute="trailing" id="4Mj-Wd-5eS"/>
+                            <constraint firstItem="0L3-2k-HJW" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="MJV-y3-qXb"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="hwg-cn-nRW" secondAttribute="bottom" constant="20" id="Sui-ZQ-3Pw"/>
+                            <constraint firstItem="hwg-cn-nRW" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="V6o-Z0-kTl"/>
+                            <constraint firstItem="2vi-h4-gDd" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="Xkr-GK-5vr"/>
+                            <constraint firstAttribute="bottom" secondItem="0L3-2k-HJW" secondAttribute="bottom" id="dQ6-up-yhf"/>
+                            <constraint firstItem="0L3-2k-HJW" firstAttribute="top" secondItem="2vi-h4-gDd" secondAttribute="bottom" id="kk1-1j-KMJ"/>
+                            <constraint firstItem="2vi-h4-gDd" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="nIz-Eg-wAx"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="2vi-h4-gDd" secondAttribute="trailing" id="rwf-EC-gWU"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="5z1-Sn-d7g"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="984.05797101449286" y="78.348214285714278"/>
+        </scene>
+        <!--RestaurantListCollectionViewController-->
+        <scene sceneID="SSh-ME-Ih1">
+            <objects>
+                <viewControllerPlaceholder storyboardName="RestaurantListCollectionViewController" referencedIdentifier="RestaurantListCollectionViewController" id="zC8-lN-Won" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QqB-1p-sEX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1684" y="78"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="allTrailsIconMountain" width="39" height="30"/>
+        <image name="mapPin" width="28" height="34"/>
+        <namedColor name="primaryAction">
+            <color red="0.25882352941176467" green="0.54117647058823526" blue="0.074509803921568626" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
