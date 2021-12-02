@@ -6,21 +6,30 @@
 //
 
 import UIKit
+import Combine
 
-private let reuseIdentifier = "Cell"
+private let reuseIdentifier = "restaurantItem"
 
 class RestaurantListCollectionViewController: UICollectionViewController {
-
-    override func viewDidLoad() {
+	let viewModel = ViewModel()
+	private var cancellables: Set<AnyCancellable> = []
+    
+	override func viewDidLoad() {
         super.viewDidLoad()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+		collectionView.register(UINib(nibName:"RestaurantItemCollectionViewCell", bundle: nil), forCellWithReuseIdentifier:reuseIdentifier)
 
         // Do any additional setup after loading the view.
+		viewModel
+			.$restauraunts
+			.sink { [weak self] restaurants in
+				self?.collectionView.reloadData()
+			}
+			.store(in: &cancellables)
     }
 
     /*
@@ -36,19 +45,20 @@ class RestaurantListCollectionViewController: UICollectionViewController {
     // MARK: UICollectionViewDataSource
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
-        return 0
+		return viewModel.restauraunts.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
-    
+		let value = viewModel.restauraunts[indexPath.item]
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! RestaurantItemCollectionViewCell
+		cell.restaurantNameLabel.text = value.name
+		cell.supportingTextLabel.text = value.supportingText
+		
         // Configure the cell
     
         return cell
