@@ -23,10 +23,14 @@ struct NearbySearchResponse: Codable {
 			let location: Location
 		}
 		
-		let name: String
-		let placeId: String
-		let rating: Decimal
-		let geometry: Geometry
+		let name: String?
+		let placeId: String?
+		let rating: Double?
+		let geometry: Geometry?
+		let priceLevel: Int?
+		let userRatingsTotal: Int?
+		let formattedPhoneNumber: String?
+		let icon: String?
 	}
 	
 	let htmlAttributions: [String]

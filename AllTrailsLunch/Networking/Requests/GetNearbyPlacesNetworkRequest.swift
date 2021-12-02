@@ -46,7 +46,7 @@ struct GetNearbyPlacesNetworkRequest: JSONNetworkRequest {
     let location: Location
 	let placeType: PlaceType
 	
-	init(apiKey: String, location: Location, type: PlaceType = .restaurant) {
+	init(apiKey: String = "AIzaSyDue_S6t9ybh_NqaeOJDkr1KC9a2ycUYuE", location: Location, type: PlaceType = .restaurant) {
 		self.apiKey = apiKey
         self.location = location
 		self.placeType = type
