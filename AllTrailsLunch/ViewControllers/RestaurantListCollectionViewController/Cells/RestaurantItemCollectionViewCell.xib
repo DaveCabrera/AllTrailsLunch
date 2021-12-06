@@ -24,7 +24,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Ma2-2C-8pX">
                                 <rect key="frame" x="0.0" y="0.0" width="272" height="66"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qYF-YA-1L0">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="restaurantImage" translatesAutoresizingMaskIntoConstraints="NO" id="qYF-YA-1L0">
                                         <rect key="frame" x="0.0" y="1" width="64" height="64"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="64" id="kou-pV-ssT"/>
@@ -171,6 +171,7 @@
     </objects>
     <resources>
         <image name="heart" catalog="system" width="128" height="109"/>
+        <image name="restaurantImage" width="2048" height="1536"/>
         <image name="star.fill" catalog="system" width="128" height="116"/>
     </resources>
 </document>

@@ -25,34 +25,14 @@ extension RestaurantListCollectionViewController {
 		
 		@Published var restauraunts: [Restaurant] = []
 		
-		private let networkClient: NetworkClientRepresentable
-		private let locationManager: LocationManger
+		private let dataProvider: NearbySearchResultsDataProvider
 		private var cancellables: Set<AnyCancellable> = []
 		
-		init(networkClient: NetworkClientRepresentable = NetworkClient(), locationManager: LocationManger = LocationManger()) {
-			self.networkClient = networkClient
-			self.locationManager = locationManager
+		init(dataProvider: NearbySearchResultsDataProvider) {
+			self.dataProvider = dataProvider
 			
-			self.locationManager
-				.$currentLocation
-				.dropFirst()
-				.print()
-				.removeDuplicates()
-				.flatMap { location -> AnyPublisher<NearbySearchResponse, Error> in
-					let location = GetNearbyPlacesNetworkRequest.Location(latitude: location.latitude, longitdue: location.longitude)
-					let request = GetNearbyPlacesNetworkRequest(location: location)
-					return self.networkClient.execute(type: NearbySearchResponse.self, networkRequest: request)
-				}
-				.receive(on: RunLoop.main)
-				.map(\.results)
-				.sink { completion in
-					switch completion {
-					case .failure(let error):
-						print("There was an error: \(error)")
-					case .finished:
-						print("Finished")
-					}
-				} receiveValue: { placeResponse in
+			self.dataProvider.$placeResults
+				.sink { placeResponse in
 					self.restauraunts = placeResponse.map { Restaurant(id: $0.placeId ?? UUID().description,
 																  name: $0.name ?? "Placeholder Name",
 																  rating: $0.rating ?? Double(0),
@@ -60,8 +40,6 @@ extension RestaurantListCollectionViewController {
 					print("The restaurants: \(self.restauraunts)")
 				}
 				.store(in: &cancellables)
-
-			self.locationManager.requestAuthorization()
 		}
 	}
 }
