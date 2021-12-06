@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import MapKit
 
 class ParentContainerViewController: UIViewController {
 	private let nearbySearchResultsDataProvider = NearbySearchResultsDataProvider()
@@ -25,6 +26,24 @@ class ParentContainerViewController: UIViewController {
 				return .list
 			}
 		}
+		
+		var image: UIImage {
+			switch self {
+			case .list:
+				return UIImage(systemName: "list.bullet")!
+			case .map:
+				return UIImage(named: "mapPin")!
+			}
+		}
+		
+		var title: String {
+			switch self {
+			case .list:
+				return NSLocalizedString("List", comment: "")
+			case .map:
+				return NSLocalizedString("Map", comment: "")
+			}
+		}
 	}
 	
 	private lazy var restaurantListCollectionVeiwController: RestaurantListCollectionViewController = {
@@ -41,23 +60,25 @@ class ParentContainerViewController: UIViewController {
 		return vc
 	}()
 	
-	private var currentViewType: ViewType = .list
+	private var nextViewType: ViewType = .map
 	
     override func viewDidLoad() {
         super.viewDidLoad()
 		
-        addChildVC(restaurantListCollectionVeiwController)
+        swapViewControllers()
     }
     
 	@IBAction func didTapPrimaryButton(_ sender: UIButton) {
 		swapViewControllers()
 	}
-	
 }
 
 private extension ParentContainerViewController {
 	func swapViewControllers() {
-		let nextType = currentViewType.nextType
+		viewTypeButton.setTitle(nextViewType.title, for: .normal)
+		viewTypeButton.setImage(nextViewType.image, for: .normal)
+		
+		let nextType = nextViewType.nextType
 		switch nextType {
 		case .list:
 			removeChild(restaurantMapViewController)
@@ -66,7 +87,7 @@ private extension ParentContainerViewController {
 			removeChild(restaurantListCollectionVeiwController)
 			addChildVC(restaurantMapViewController)
 		}
-		currentViewType = nextType
+		nextViewType = nextType
 	}
 	
 	func addChildVC(_ vc: UIViewController) {
