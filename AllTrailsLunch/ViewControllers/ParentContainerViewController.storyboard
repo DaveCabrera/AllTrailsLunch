@@ -18,10 +18,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2vi-h4-gDd">
-                                <rect key="frame" x="0.0" y="44" width="414" height="100"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="115"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="4ed-bp-dy4">
-                                        <rect key="frame" x="98" y="35.5" width="218" height="29"/>
+                                        <rect key="frame" x="98" y="15" width="218" height="29"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="allTrailsIconMountain" translatesAutoresizingMaskIntoConstraints="NO" id="Fr4-YV-pcv">
                                                 <rect key="frame" x="0.0" y="7" width="31" height="22"/>
@@ -50,12 +50,22 @@
                                             </stackView>
                                         </subviews>
                                     </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4aQ-dn-efa">
+                                        <rect key="frame" x="0.0" y="59" width="414" height="56"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="56" id="gV8-Bb-cVz"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="4ed-bp-dy4" firstAttribute="centerY" secondItem="2vi-h4-gDd" secondAttribute="centerY" id="EV4-Ff-rhc"/>
-                                    <constraint firstItem="4ed-bp-dy4" firstAttribute="centerX" secondItem="2vi-h4-gDd" secondAttribute="centerX" id="bmA-sO-qcb"/>
-                                    <constraint firstAttribute="height" constant="100" id="p8h-rf-iV1"/>
+                                    <constraint firstAttribute="bottom" secondItem="4aQ-dn-efa" secondAttribute="bottom" id="3Bg-XX-dix"/>
+                                    <constraint firstItem="4aQ-dn-efa" firstAttribute="leading" secondItem="2vi-h4-gDd" secondAttribute="leading" id="Tzc-HU-lC8"/>
+                                    <constraint firstItem="4ed-bp-dy4" firstAttribute="top" secondItem="2vi-h4-gDd" secondAttribute="top" constant="15" id="YD3-Fm-1d6"/>
+                                    <constraint firstItem="4ed-bp-dy4" firstAttribute="centerX" secondItem="2vi-h4-gDd" secondAttribute="centerX" id="azE-Ph-gzt"/>
+                                    <constraint firstAttribute="height" constant="115" id="p8h-rf-iV1"/>
+                                    <constraint firstAttribute="trailing" secondItem="4aQ-dn-efa" secondAttribute="trailing" id="zi7-Je-Jvt"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" role="primary" translatesAutoresizingMaskIntoConstraints="NO" id="hwg-cn-nRW">
@@ -81,13 +91,14 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="hwg-cn-nRW" secondAttribute="bottom" constant="20" id="Sui-ZQ-3Pw"/>
                             <constraint firstItem="hwg-cn-nRW" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="V6o-Z0-kTl"/>
                             <constraint firstItem="2vi-h4-gDd" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="Xkr-GK-5vr"/>
-                            <constraint firstItem="2vi-h4-gDd" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="nIz-Eg-wAx"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="2vi-h4-gDd" secondAttribute="trailing" id="rwf-EC-gWU"/>
+                            <constraint firstItem="2vi-h4-gDd" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="w1p-kX-ZfT"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="5z1-Sn-d7g"/>
                     <connections>
-                        <outlet property="headerNavView" destination="2vi-h4-gDd" id="lbu-Pk-Ydm"/>
+                        <outlet property="headerNavView" destination="2vi-h4-gDd" id="WQp-Zk-7OJ"/>
+                        <outlet property="searchBarView" destination="4aQ-dn-efa" id="dWg-TS-fw2"/>
                         <outlet property="viewTypeButton" destination="hwg-cn-nRW" id="846-e9-Ijq"/>
                     </connections>
                 </viewController>

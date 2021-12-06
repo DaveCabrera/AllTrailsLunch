@@ -10,7 +10,9 @@ import MapKit
 
 class ParentContainerViewController: UIViewController {
 	private let nearbySearchResultsDataProvider = NearbySearchResultsDataProvider()
+	private let searchController = UISearchController()
 	
+	@IBOutlet private weak var searchBarView: UIView!
 	@IBOutlet private weak var headerNavView: UIView!
 	@IBOutlet private weak var viewTypeButton: UIButton!
 	
@@ -65,6 +67,7 @@ class ParentContainerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 		
+		setupSearchBar()
         swapViewControllers()
     }
     
@@ -74,6 +77,16 @@ class ParentContainerViewController: UIViewController {
 }
 
 private extension ParentContainerViewController {
+	func setupSearchBar() {
+		let searchBar = searchController.searchBar
+		searchBarView.addSubview(searchBar)
+		searchController.hidesNavigationBarDuringPresentation = false
+		searchController.searchResultsUpdater = self
+		
+		searchBar.sizeToFit()
+		searchBar.placeholder = NSLocalizedString("Search for a Restaurant", comment: "")
+	}
+	
 	func swapViewControllers() {
 		viewTypeButton.setTitle(nextViewType.title, for: .normal)
 		viewTypeButton.setImage(nextViewType.image, for: .normal)
@@ -111,5 +124,11 @@ private extension ParentContainerViewController {
 		vc.willMove(toParent: nil)
 		vc.view.removeFromSuperview()
 		vc.removeFromParent()
+	}
+}
+
+extension ParentContainerViewController: UISearchResultsUpdating {
+	func updateSearchResults(for searchController: UISearchController) {
+		//
 	}
 }
