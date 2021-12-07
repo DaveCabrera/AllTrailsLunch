@@ -35,6 +35,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9E1BA1DD275F2A1A0043C586 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		9E231A2F275D628C00509C5A /* RestaurantMapViewStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RestaurantMapViewStoryboard.storyboard; sourceTree = "<group>"; };
 		9E231A31275D62A200509C5A /* RestaurantMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantMapViewController.swift; sourceTree = "<group>"; };
 		9E6264A7275E7871007D3CE8 /* NearbySearchResultsDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbySearchResultsDataProvider.swift; sourceTree = "<group>"; };
@@ -97,6 +98,7 @@
 		9EA54C322746E02700383EDE = {
 			isa = PBXGroup;
 			children = (
+				9E1BA1DD275F2A1A0043C586 /* README.md */,
 				9EA54C3D2746E02700383EDE /* AllTrailsLunch */,
 				9EA54C3C2746E02700383EDE /* Products */,
 				9EA54C662746F79300383EDE /* Frameworks */,
