@@ -18,7 +18,7 @@ extension RestaurantListCollectionViewController {
 			
 			let id: String
 			let name: String
-			let supportingText: String = NSLocalizedString("Supporting Text", comment: "")
+			let supportingText: String
 			let rating: Double
 			let iconURL: URL?
 		}
@@ -34,9 +34,10 @@ extension RestaurantListCollectionViewController {
 			self.dataProvider.$placeResults
 				.sink { placeResponse in
 					self.restauraunts = placeResponse.map { Restaurant(id: $0.placeId ?? UUID().description,
-																  name: $0.name ?? "Placeholder Name",
-																  rating: $0.rating ?? Double(0),
-																  iconURL: URL(string: $0.icon ?? ""))}
+																	   name: $0.name ?? "Placeholder Name",
+																	   supportingText: $0.formattedAddress ?? "",
+																	   rating: $0.rating ?? Double(0),
+																	   iconURL: URL(string: $0.icon ?? ""))}
 					print("The restaurants: \(self.restauraunts)")
 				}
 				.store(in: &cancellables)

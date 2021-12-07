@@ -31,6 +31,7 @@ struct NearbySearchResponse: Codable {
 		let userRatingsTotal: Int?
 		let formattedPhoneNumber: String?
 		let icon: String?
+		let formattedAddress: String?
 	}
 	
 	let htmlAttributions: [String]

@@ -11,6 +11,7 @@
 		9E231A32275D62A200509C5A /* RestaurantMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E231A31275D62A200509C5A /* RestaurantMapViewController.swift */; };
 		9E6264A8275E7871007D3CE8 /* NearbySearchResultsDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6264A7275E7871007D3CE8 /* NearbySearchResultsDataProvider.swift */; };
 		9E6264AA275E817B007D3CE8 /* RestaurantMapViewController+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6264A9275E817B007D3CE8 /* RestaurantMapViewController+ViewModel.swift */; };
+		9E6833F2275EB79900DAD669 /* GetPlaceTextSearchNetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6833F1275EB79900DAD669 /* GetPlaceTextSearchNetworkRequest.swift */; };
 		9E910C1127592F2900C7AF0E /* RestaurantListCollectionViewController+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E910C1027592F2900C7AF0E /* RestaurantListCollectionViewController+ViewModel.swift */; };
 		9E910C1327594A1800C7AF0E /* ParentContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E910C1227594A1800C7AF0E /* ParentContainerViewController.swift */; };
 		9E910C1627594A6400C7AF0E /* ParentContainerViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E910C1527594A6400C7AF0E /* ParentContainerViewController.storyboard */; };
@@ -38,6 +39,7 @@
 		9E231A31275D62A200509C5A /* RestaurantMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantMapViewController.swift; sourceTree = "<group>"; };
 		9E6264A7275E7871007D3CE8 /* NearbySearchResultsDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbySearchResultsDataProvider.swift; sourceTree = "<group>"; };
 		9E6264A9275E817B007D3CE8 /* RestaurantMapViewController+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RestaurantMapViewController+ViewModel.swift"; sourceTree = "<group>"; };
+		9E6833F1275EB79900DAD669 /* GetPlaceTextSearchNetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPlaceTextSearchNetworkRequest.swift; sourceTree = "<group>"; };
 		9E910C1027592F2900C7AF0E /* RestaurantListCollectionViewController+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RestaurantListCollectionViewController+ViewModel.swift"; sourceTree = "<group>"; };
 		9E910C1227594A1800C7AF0E /* ParentContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentContainerViewController.swift; sourceTree = "<group>"; };
 		9E910C1527594A6400C7AF0E /* ParentContainerViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ParentContainerViewController.storyboard; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				9EA54C5F2746E94000383EDE /* GetNearbyPlacesNetworkRequest.swift */,
+				9E6833F1275EB79900DAD669 /* GetPlaceTextSearchNetworkRequest.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -330,6 +333,7 @@
 				9EA54C6B2746FC8A00383EDE /* NetworkClientProtocol.swift in Sources */,
 				9EFDB4F32757F2EF00A1269A /* CLLocationCoordinate2D+Equatable.swift in Sources */,
 				9EFDB4E92756EC8300A1269A /* LocationManager.swift in Sources */,
+				9E6833F2275EB79900DAD669 /* GetPlaceTextSearchNetworkRequest.swift in Sources */,
 				9EA54C3F2746E02700383EDE /* AppDelegate.swift in Sources */,
 				9E6264A8275E7871007D3CE8 /* NearbySearchResultsDataProvider.swift in Sources */,
 				9EA54C622746F1BF00383EDE /* NetworkRequestProtocol.swift in Sources */,

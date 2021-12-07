@@ -129,6 +129,8 @@ private extension ParentContainerViewController {
 
 extension ParentContainerViewController: UISearchResultsUpdating {
 	func updateSearchResults(for searchController: UISearchController) {
-		//
+		if let text = searchController.searchBar.text, !text.isEmpty {
+			nearbySearchResultsDataProvider.searchText = searchController.searchBar.text ?? ""
+		}
 	}
 }
